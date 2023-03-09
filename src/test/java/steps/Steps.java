@@ -1,4 +1,5 @@
-package StepDefinitions;
+package steps;
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -18,8 +19,9 @@ public class Steps{
     }
 
     @When("the user enters valid credentials")
-    public void the_user_enters_valid_credentials() {
-        System.out.println("Entered username and password");
+    public void the_user_enters_valid_credentials(DataTable dataTable)
+    {
+        System.out.println("Entered username and password " + dataTable.cell(1,0));
     }
 
     @When("hits submit")
